@@ -66,3 +66,16 @@ AOSPFlasher/
 - 刷写分区时设备需处于 Fastboot 模式 / Device must be in Fastboot mode for flashing partitions
 - 刷入 ROM/GApps 时设备需处于 Sideload 模式 / Device must be in Sideload mode for ROM/GApps installation
 - 刷机将清除数据，请提前备份！/ Flashing will wipe data, please backup first!
+
+## 第三方工具 / Third-party Tools
+
+- **payload-dumper-go** - 用于提取 payload.bin
+  - 许可证 / License: Apache License 2.0
+  - 作者 / Author: Suhun Han (ssut)
+  - 项目 / Project: https://github.com/ssut/payload-dumper-go
+  - 许可证文件 / License file: `tools/LICENSE`
+
+## 致谢 / Acknowledgments
+
+- **流水断崖**: 提供驱动下载资源
+- **驱动下载**: https://lsdy.top/azqddownload
