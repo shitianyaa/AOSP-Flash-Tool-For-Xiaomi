@@ -19,7 +19,7 @@ function Get-ScriptDir {
 }
 
 $Script:Config = @{
-    Version = "1.0.3"
+    Version = "1.0.6"
     ScriptDir = Get-ScriptDir
     Language = ""
     ToolsDir = ""
