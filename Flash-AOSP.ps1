@@ -108,29 +108,34 @@ $Script:Labels_zh = @{
     StartFlash = "开始刷机"
     DeviceNotConnected = "设备未连接"
     NeedFastboot = "设备必须在 Fastboot 模式"
-    Step1RebootFastboot = "步骤 1/6: 重启到 Fastboot"
+    Step1RebootFastboot = "步骤 1/7: 重启到 Fastboot"
     WaitingFastboot = "等待 Fastboot..."
     EnterFastbootFailed = "设备进入 Fastboot 失败"
     ManualRebootFastboot = "请手动重启到 Fastboot"
     DeviceInFastboot = "设备已进入 Fastboot 模式"
-    FlashPartitions = "步骤 2/6: 刷入分区 (boot/init_boot/dtbo/vendor_boot)"
-    FlashRecovery = "步骤 3/6: 刷入 Recovery"
+    FlashPartitions = "步骤 2/7: 刷入分区 (boot/init_boot/dtbo/vendor_boot)"
+    FlashRecovery = "步骤 3/7: 刷入 Recovery"
     Flashing = "正在刷入: {0}"
     Flashed = "{0} 已刷入"
     FlashFailed = "{0} 失败"
     FlashSuccess = "{0} 成功"
     SkipNotFound = "跳过 {0} (未找到)"
     FlashedCount = "已刷入 {0} 个分区"
-    Step4RebootRecovery = "步骤 4/6: 重启到 Recovery"
+    Step4RebootRecovery = "步骤 4/7: 重启到 Recovery 并 sideload ROM"
     DeviceWillReboot = "设备将重启到 Recovery"
     ReadyContinue = "是否继续？"
     WaitRecovery = "等待 Recovery..."
-    Step5FactoryReset = "步骤 5/6: 双清 (Factory Reset)"
+    Step5FactoryReset = "步骤 5/7: ROM 刷入后重启 Recovery 并双清"
     OnDeviceFactoryReset = "在设备上: 选择 'Factory Reset' -> 'Format data / factory reset'"
-    FactoryResetDone = "双清完成？"
-    Step6Sideload = "步骤 6/6: ADB Sideload 刷入 ROM"
-    OnDeviceApply = "在设备上: Apply update -> Apply from ADB"
+    RebootRecoveryAgain = "在设备上重新进入 Recovery"
+    SelectFactoryReset = "选择 'Factory Reset'"
+    SelectFormatData = "然后选择 'Format data / factory reset'"
+    WaitFormatComplete = "等待格式化完成"
+    FactoryResetDone = "双清完成后输入 y 继续"
+    Step6Sideload = "步骤 6/7: (可选) ADB Sideload 刷入 GApps"
+    OnDeviceApply = "在设备上: 选择 'Apply update' -> 'Apply from ADB'"
     WaitSideloadMode = "等待 sideload 模式..."
+    ReconnectUsbHint = "如果长时间未识别到设备，请拔出数据线后重新插入再试"
     NotInSideload = "设备不在 Sideload 模式"
     DeviceInSideload = "设备已进入 Sideload 模式"
     Sideload = "ADB Sideload"
@@ -139,12 +144,12 @@ $Script:Labels_zh = @{
     FlashingZip = "正在刷入: {0}"
     MayTakeTime = "此过程可能需要 5-15 分钟..."
     FlashComplete = "刷机完成！"
-    SelectReboot = "请在设备上选择 'Reboot system now'"
+    SelectReboot = "步骤 7/7: 请在设备上选择 'Reboot system now'"
     InstallGapps = "安装 GApps？"
     GappsNote = "注意: 如果需要 GApps，请不要先重启到系统！"
     GappsInstruction = "如需安装 GApps，在 recovery 中选择 'Apply update' -> 'Apply from ADB'"
     AfterRomGapps = "请选择 GApps ZIP 文件进行 sideload"
-    AfterRomSideload = "刷入 ROM 后，可根据需要安装 GApps"
+    AfterRomSideload = "如需安装 GApps，请在重启系统前于 Recovery 中刷入"
     ReadyToReboot = "准备重启到系统？"
     Model = "型号: {0}"
     Android = "安卓版本: {0}"
@@ -271,29 +276,34 @@ $Script:Labels_en = @{
     StartFlash = "Start Flashing"
     DeviceNotConnected = "Device not connected"
     NeedFastboot = "Device must be in Fastboot mode"
-    Step1RebootFastboot = "Step 1/6: Reboot to Fastboot"
+    Step1RebootFastboot = "Step 1/7: Reboot to Fastboot"
     WaitingFastboot = "Waiting for Fastboot..."
     EnterFastbootFailed = "Device failed to enter Fastboot"
     ManualRebootFastboot = "Please manually reboot to Fastboot"
     DeviceInFastboot = "Device in Fastboot mode"
-    FlashPartitions = "Step 2/6: Flash partitions (boot/init_boot/dtbo/vendor_boot)"
-    FlashRecovery = "Step 3/6: Flash Recovery"
+    FlashPartitions = "Step 2/7: Flash partitions (boot/init_boot/dtbo/vendor_boot)"
+    FlashRecovery = "Step 3/7: Flash Recovery"
     Flashing = "Flashing: {0}"
     Flashed = "{0} flashed"
     FlashFailed = "{0} failed"
     FlashSuccess = "{0} success"
     SkipNotFound = "Skip {0} (not found)"
     FlashedCount = "Flashed {0} partitions"
-    Step4RebootRecovery = "Step 4/6: Reboot to Recovery"
+    Step4RebootRecovery = "Step 4/7: Reboot to Recovery and sideload ROM"
     DeviceWillReboot = "Device will reboot to Recovery"
     ReadyContinue = "Ready to continue?"
     WaitRecovery = "Waiting for Recovery..."
-    Step5FactoryReset = "Step 5/6: Factory Reset"
+    Step5FactoryReset = "Step 5/7: Reboot Recovery and factory reset after ROM"
     OnDeviceFactoryReset = "On device: Select 'Factory Reset' -> 'Format data / factory reset'"
-    FactoryResetDone = "Factory reset complete?"
-    Step6Sideload = "Step 6/6: ADB Sideload ROM"
+    RebootRecoveryAgain = "Reboot to Recovery again on device"
+    SelectFactoryReset = "Select 'Factory Reset'"
+    SelectFormatData = "Then select 'Format data / factory reset'"
+    WaitFormatComplete = "Wait for formatting to complete"
+    FactoryResetDone = "Enter y to continue after factory reset"
+    Step6Sideload = "Step 6/7: (Optional) ADB Sideload GApps"
     OnDeviceApply = "On device: Apply update -> Apply from ADB"
     WaitSideloadMode = "Waiting for sideload mode"
+    ReconnectUsbHint = "If the device is not detected for a long time, unplug and reconnect the USB cable and try again"
     NotInSideload = "Device not in Sideload mode"
     DeviceInSideload = "Device in Sideload mode"
     Sideload = "ADB Sideload"
@@ -302,12 +312,12 @@ $Script:Labels_en = @{
     FlashingZip = "Flashing: {0}"
     MayTakeTime = "This may take 5-15 minutes..."
     FlashComplete = "Flash Complete!"
-    SelectReboot = "Select 'Reboot system now' on device"
+    SelectReboot = "Step 7/7: Select 'Reboot system now' on device"
     InstallGapps = "Install GApps?"
     GappsNote = "Note: If you need GApps, do NOT reboot to system yet!"
     GappsInstruction = "If you want GApps, select 'Apply update' -> 'Apply from ADB' in recovery"
     AfterRomGapps = "Now select GApps ZIP file for sideload"
-    AfterRomSideload = "After flashing ROM, you can install GApps if needed"
+    AfterRomSideload = "If you need GApps, flash it in Recovery before rebooting system"
     ReadyToReboot = "Ready to reboot to system?"
     Model = "Model: {0}"
     Android = "Android: {0}"
@@ -399,6 +409,19 @@ function Get-DeviceState {
     if ($r -match "sideload") { return "sideload" }
     $fb = (Invoke-Fastboot "devices").Output
     if ($fb -match "fastboot") { return "fastboot" }
+    return "offline"
+}
+
+function Get-DeviceStateQuiet {
+    $t = Find-PlatformTools
+    if (-not $t) { return "offline" }
+    try {
+        $adbOut = & $t.ADB devices 2>&1 | Out-String
+        if ($adbOut -match "\tdevice") { return "device" }
+        if ($adbOut -match "sideload") { return "sideload" }
+        $fastbootOut = & $t.Fastboot devices 2>&1 | Out-String
+        if ($fastbootOut -match "fastboot") { return "fastboot" }
+    } catch {}
     return "offline"
 }
 function Initialize-Paths {
@@ -690,16 +713,6 @@ function Start-FlashProcess {
     Invoke-Fastboot "reboot recovery"
     Write-Host (T "WaitRecoveryMode")
     Start-Sleep -Seconds 15
-    
-    Write-Step (T "Step5FactoryReset")
-    Write-Host ""; Write-Host "  $(T 'OnDeviceFactoryReset')" -ForegroundColor Yellow; Write-Host ""
-    Write-Host "  1. Select 'Factory Reset' on device" -ForegroundColor Cyan
-    Write-Host "  2. Then select 'Format data / factory reset'" -ForegroundColor Cyan
-    Write-Host "  3. Wait for formatting to complete" -ForegroundColor Cyan
-    Write-Host ""
-    if (-not (Get-YesNo (T "FactoryResetDone"))) { Write-Host (T "Cancelled"); return $false }
-    
-    Write-Step (T "Step6Sideload")
     Write-Host ""; Write-Host "  $(T 'OnDeviceApply')" -ForegroundColor Green
     Write-Host ""
     if (-not $RomZip) {
@@ -708,18 +721,29 @@ function Start-FlashProcess {
     if (-not $RomZip) { Write-Warn (T "NoRomZip"); Write-OK (T "PartitionComplete"); return $true }
     if ($RomZip -notmatch "\.zip`$") { Write-Warn (T "NoRomZip"); Write-OK (T "PartitionComplete"); return $true }
     
-    Write-Host ""; Write-Host "  $(T 'WaitSideloadMode')" -NoNewline
-    $to = 180; $el = 0; $ready = $false
-    while ($el -lt $to) { $s = Get-DeviceState; if ($s -eq "sideload") { $ready = $true; break }; Start-Sleep -Seconds 3; $el += 3; Write-Host "." -NoNewline }
     Write-Host ""
+    Write-Host "  $(T 'WaitSideloadMode')" -ForegroundColor Yellow
+    Write-Host "  $(T 'ReconnectUsbHint')" -ForegroundColor DarkYellow
+    $to = 180; $el = 0; $ready = $false
+    while ($el -lt $to) { $s = Get-DeviceStateQuiet; if ($s -eq "sideload") { $ready = $true; break }; Start-Sleep -Seconds 3; $el += 3 }
     if (-not $ready) { Write-Err (T "NotInSideload"); return $false }
     Write-OK (T "DeviceInSideload")
     
     Write-Host ""; Write-Host "  $(T 'FlashingZip' (Split-Path $RomZip -Leaf))" -ForegroundColor Cyan; Write-Host "  $(T 'MayTakeTime')"; Write-Host ""
     Invoke-ADB -Arguments "sideload `"$RomZip`"" -TimeoutSeconds 900
-    
+
+    Write-Step (T "Step5FactoryReset")
+    Write-Host ""; Write-Host "  $(T 'OnDeviceFactoryReset')" -ForegroundColor Yellow; Write-Host ""
+    Write-Host "  1. $(T 'RebootRecoveryAgain')" -ForegroundColor Cyan
+    Write-Host "  2. $(T 'SelectFactoryReset')" -ForegroundColor Cyan
+    Write-Host "  3. $(T 'SelectFormatData')" -ForegroundColor Cyan
+    Write-Host "  4. $(T 'WaitFormatComplete')" -ForegroundColor Cyan
     Write-Host ""
-    Write-Host "========================================" -ForegroundColor Cyan; Write-Host "    $(T 'FlashComplete')" -ForegroundColor Green; Write-Host "========================================" -ForegroundColor Cyan; Write-Host ""
+    do {
+        $factoryResetConfirm = (Read-Host (T "FactoryResetDone")).Trim()
+    } while ($factoryResetConfirm -ne 'y' -and $factoryResetConfirm -ne 'Y')
+
+    Write-Step (T "Step6Sideload")
     
     if ($GappsZip -and (Test-Path $GappsZip)) {
         Write-Host ""
@@ -728,19 +752,28 @@ function Start-FlashProcess {
         Write-Host "  GApps must be flashed BEFORE reboot!" -ForegroundColor Yellow
         Write-Host "========================================" -ForegroundColor Yellow
         Write-Host ""
-        Write-Host "  $(T 'WaitSideloadMode')" -NoNewline
+        Write-Host "  $(T 'WaitSideloadMode')" -ForegroundColor Yellow
+        Write-Host "  $(T 'ReconnectUsbHint')" -ForegroundColor DarkYellow
         $to = 180; $el = 0; $ready = $false
-        while ($el -lt $to) { $s = Get-DeviceState; if ($s -eq "sideload") { $ready = $true; break }; Start-Sleep -Seconds 3; $el += 3; Write-Host "." -NoNewline }
-        Write-Host ""
+        while ($el -lt $to) { $s = Get-DeviceStateQuiet; if ($s -eq "sideload") { $ready = $true; break }; Start-Sleep -Seconds 3; $el += 3 }
         if ($ready) {
             Write-Host "  Flashing GApps: $(Split-Path $GappsZip -Leaf)" -ForegroundColor Cyan
             Invoke-ADB -Arguments "sideload `"$GappsZip`"" -TimeoutSeconds 600
             Write-Host ""
             Write-Host "  GApps flashed! Signature verification may fail - click 'Yes' to continue." -ForegroundColor Yellow
+        } else {
+            Write-Err (T "NotInSideload")
+            Write-Host "  $(T 'AfterRomSideload')" -ForegroundColor Yellow
+            Write-Host "  $(T 'GappsInstruction')" -ForegroundColor Yellow
         }
+    } else {
+        Write-Host ""
+        Write-Host "  $(T 'AfterRomSideload')" -ForegroundColor Yellow
+        Write-Host "  $(T 'GappsInstruction')" -ForegroundColor Yellow
     }
     
     Write-Host ""
+    Write-Host "========================================" -ForegroundColor Cyan; Write-Host "    $(T 'FlashComplete')" -ForegroundColor Green; Write-Host "========================================" -ForegroundColor Cyan; Write-Host ""
     Write-Host "========================================" -ForegroundColor Cyan
     Write-Host "  Process complete!" -ForegroundColor Cyan
     Write-Host "========================================" -ForegroundColor Cyan; Write-Host ""
@@ -914,6 +947,9 @@ function Start-CompleteFlash {
             Start-Process "https://lsdy.top/azqddownload"
             Write-Host (T "DriverInstallDone") -ForegroundColor Yellow
             return
+        } else {
+            Write-Host (T "DriverInstallDone") -ForegroundColor Yellow
+            return
         }
     }
     
@@ -1040,6 +1076,9 @@ function Start-FlashImagesOnly {
     } else {
         if (Get-YesNo (T "DriverInstallDownload")) {
             Start-Process "https://lsdy.top/azqddownload"
+            Write-Host (T "DriverInstallDone") -ForegroundColor Yellow
+            return
+        } else {
             Write-Host (T "DriverInstallDone") -ForegroundColor Yellow
             return
         }

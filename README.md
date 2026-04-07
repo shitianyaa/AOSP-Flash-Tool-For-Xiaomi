@@ -28,7 +28,7 @@ AOSPFlasher/
 
 | 选项 Option | 说明 Description |
 |------------|------------------|
-| [1] 全量刷机 / Full Flash | 完整流程：重启Fastboot → 刷分区镜像 → 刷recovery → 双清 → sideload刷入ROM → (可选)刷入GApps / Complete process: reboot to Fastboot → flash partition images → flash recovery → factory reset → sideload ROM → (optional) flash GApps |
+| [1] 全量刷机 / Full Flash | 完整流程：重启Fastboot → 刷分区镜像 → 刷recovery → sideload刷入ROM → 重启Recovery后双清 → (可选)刷入GApps → 重启系统 / Complete process: reboot to Fastboot → flash partition images → flash recovery → sideload ROM → reboot Recovery and factory reset → (optional) flash GApps → reboot system |
 | [2] 仅提取 / Extract Only | 仅提取 payload.bin 镜像文件 / Extract payload.bin images only |
 | [3] 刷入镜像 / Flash Images | 刷写已提取的镜像到设备 / Flash extracted images to device |
 | [4] 仅Sideload / Sideload Only | 通过 ADB sideload 刷入 ROM ZIP / Flash ROM ZIP via ADB sideload |
@@ -42,11 +42,10 @@ AOSPFlasher/
 1. Step 1: 重启到 Fastboot 模式 / Reboot to Fastboot mode
 2. Step 2: 刷写分区镜像 (boot, init_boot, dtbo, vendor_boot) / Flash partition images (boot, init_boot, dtbo, vendor_boot)
 3. Step 3: 刷写 recovery / Flash recovery
-4. Step 4: 重启到 Recovery 模式 / Reboot to Recovery mode
-5. Step 5: 在设备上执行双清 (Factory Reset) / Perform factory reset on device
-6. Step 6: Sideload 刷入 ROM ZIP / Flash ROM ZIP via sideload
-7. Step 7: (可选) Sideload 刷入 GApps / (Optional) Flash GApps via sideload
-8. 完成: 重启系统 / Complete: Reboot to system
+4. Step 4: 重启到 Recovery 并 sideload 刷入 ROM ZIP / Reboot to Recovery and sideload the ROM ZIP
+5. Step 5: ROM 刷入后重启到 Recovery 执行双清 (Factory Reset) / Reboot to Recovery and perform factory reset after ROM flashing
+6. Step 6: 如有需要，在重启系统前 sideload 刷入 GApps / If needed, sideload GApps before rebooting to system
+7. Step 7: 完成后重启系统 / Reboot to system when finished
 
 ## 驱动安装 / Driver Installation
 
