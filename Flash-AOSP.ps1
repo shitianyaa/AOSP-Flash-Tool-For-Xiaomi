@@ -19,7 +19,7 @@ function Get-ScriptDir {
 }
 
 $Script:Config = @{
-    Version = "1.0.7"
+    Version = "1.0.8"
     ScriptDir = Get-ScriptDir
     Language = ""
     ToolsDir = ""
@@ -125,14 +125,14 @@ $Script:Labels_zh = @{
     DeviceWillReboot = "设备将重启到 Recovery"
     ReadyContinue = "是否继续？"
     WaitRecovery = "等待 Recovery..."
-    Step5FactoryReset = "步骤 5/7: 重启 Recovery 并双清"
+    Step5Sideload = "步骤 5/7: ADB Sideload 刷入 ROM"
+    Step6FactoryReset = "步骤 6/7: 重启 Recovery 并双清"
     OnDeviceFactoryReset = "在设备上: 选择 'Factory Reset' -> 'Format data / factory reset'"
     RebootRecoveryAgain = "在设备上重新进入 Recovery"
     SelectFactoryReset = "选择 'Factory Reset'"
     SelectFormatData = "然后选择 'Format data / factory reset'"
     WaitFormatComplete = "等待格式化完成"
     FactoryResetDone = "双清完成后输入 y 继续"
-    Step6Sideload = "步骤 6/7: ADB Sideload 刷入 ROM"
     Step7Gapps = "步骤 7/7: (可选) ADB Sideload 刷入 GApps"
     OnDeviceApply = "在设备上: 选择 'Apply update' -> 'Apply from ADB'"
     WaitSideloadMode = "等待 sideload 模式..."
@@ -148,9 +148,9 @@ $Script:Labels_zh = @{
     SelectReboot = "请在设备上选择 'Reboot system now'"
     InstallGapps = "安装 GApps？"
     GappsNote = "注意: 如果需要 GApps，请不要先重启到系统！"
-    GappsInstruction = "如需安装 GApps，在 recovery 中选择 'Apply update' -> 'Apply from ADB'"
-    AfterRomGapps = "请选择 GApps ZIP 文件进行 sideload"
-    AfterRomSideload = "如需安装 GApps，请在重启系统前于 Recovery 中刷入"
+    GappsInstruction = "如需安装 GApps，请先完成双清，再在 recovery 中选择 'Apply update' -> 'Apply from ADB'"
+    AfterFactoryResetGapps = "完成双清后，请选择 GApps ZIP 文件进行 sideload"
+    GappsAfterFactoryReset = "如需安装 GApps，请在双清完成后、重启系统前于 Recovery 中刷入"
     ReadyToReboot = "准备重启到系统？"
     Model = "型号: {0}"
     Android = "安卓版本: {0}"
@@ -188,9 +188,9 @@ $Script:Labels_zh = @{
     ProcessComplete = "流程完成！"
     GAppsSideloadFailed = "GApps sideload 失败！"
     GAppsSideloadComplete = "GApps 传输完成！"
-    GAppsImportant = "重要：现在刷入 GApps！"
-    GAppsMustBeforeReboot = "GApps 必须在重启前刷入！"
-    ReadyToFlashGApps = "准备好刷入 GApps 了？"
+    GAppsImportant = "重要：双清完成后，现在刷入 GApps！"
+    GAppsMustBeforeReboot = "GApps 必须在双清后、重启前刷入！"
+    ReadyToFlashGApps = "双清完成并准备好刷入 GApps 了吗？"
     RomSideloadFailed = "ROM sideload 失败！"
     RomSideloadComplete = "ROM 传输完成"
     RomSideloadWaitReboot = "等待设备重新连接..."
@@ -305,14 +305,14 @@ $Script:Labels_en = @{
     DeviceWillReboot = "Device will reboot to Recovery"
     ReadyContinue = "Ready to continue?"
     WaitRecovery = "Waiting for Recovery..."
-    Step5FactoryReset = "Step 5/7: Reboot Recovery and factory reset"
+    Step5Sideload = "Step 5/7: ADB Sideload flash ROM"
+    Step6FactoryReset = "Step 6/7: Reboot Recovery and factory reset"
     OnDeviceFactoryReset = "On device: Select 'Factory Reset' -> 'Format data / factory reset'"
     RebootRecoveryAgain = "Reboot to Recovery again on device"
     SelectFactoryReset = "Select 'Factory Reset'"
     SelectFormatData = "Then select 'Format data / factory reset'"
     WaitFormatComplete = "Wait for formatting to complete"
     FactoryResetDone = "Enter y to continue after factory reset"
-    Step6Sideload = "Step 6/7: ADB Sideload flash ROM"
     Step7Gapps = "Step 7/7: (Optional) ADB Sideload flash GApps"
     OnDeviceApply = "On device: Apply update -> Apply from ADB"
     WaitSideloadMode = "Waiting for sideload mode"
@@ -328,9 +328,9 @@ $Script:Labels_en = @{
     SelectReboot = "Select 'Reboot system now' on device"
     InstallGapps = "Install GApps?"
     GappsNote = "Note: If you need GApps, do NOT reboot to system yet!"
-    GappsInstruction = "If you want GApps, select 'Apply update' -> 'Apply from ADB' in recovery"
-    AfterRomGapps = "Now select GApps ZIP file for sideload"
-    AfterRomSideload = "If you need GApps, flash it in Recovery before rebooting system"
+    GappsInstruction = "If you want GApps, finish the factory reset first, then select 'Apply update' -> 'Apply from ADB' in recovery"
+    AfterFactoryResetGapps = "After the factory reset, select the GApps ZIP file for sideload"
+    GappsAfterFactoryReset = "If you need GApps, flash it in Recovery after the factory reset and before rebooting system"
     ReadyToReboot = "Ready to reboot to system?"
     Model = "Model: {0}"
     Android = "Android: {0}"
@@ -368,9 +368,9 @@ $Script:Labels_en = @{
     ProcessComplete = "Process complete!"
     GAppsSideloadFailed = "GApps sideload failed!"
     GAppsSideloadComplete = "GApps transfer complete!"
-    GAppsImportant = "IMPORTANT: Now flashing GApps!"
-    GAppsMustBeforeReboot = "GApps must be flashed BEFORE reboot!"
-    ReadyToFlashGApps = "Ready to flash GApps?"
+    GAppsImportant = "IMPORTANT: Factory reset is done, now flash GApps!"
+    GAppsMustBeforeReboot = "GApps must be flashed AFTER factory reset and BEFORE reboot!"
+    ReadyToFlashGApps = "Is factory reset done and are you ready to flash GApps?"
     RomSideloadFailed = "ROM sideload failed!"
     RomSideloadComplete = "ROM transfer complete"
     RomSideloadWaitReboot = "Waiting for device to reconnect..."
@@ -738,19 +738,8 @@ function Start-FlashProcess {
     Write-Host (T "WaitRecoveryMode")
     Start-Sleep -Seconds 15
     Write-Host ""
-    
-    Write-Step (T "Step5FactoryReset")
-    Write-Host ""; Write-Host "  $(T 'OnDeviceFactoryReset')" -ForegroundColor Yellow; Write-Host ""
-    Write-Host "  1. $(T 'RebootRecoveryAgain')" -ForegroundColor Cyan
-    Write-Host "  2. $(T 'SelectFactoryReset')" -ForegroundColor Cyan
-    Write-Host "  3. $(T 'SelectFormatData')" -ForegroundColor Cyan
-    Write-Host "  4. $(T 'WaitFormatComplete')" -ForegroundColor Cyan
-    Write-Host ""
-    do {
-        $factoryResetConfirm = (Read-Host (T "FactoryResetDone")).Trim()
-    } while ($factoryResetConfirm -ne 'y' -and $factoryResetConfirm -ne 'Y')
 
-    Write-Step (T "Step6Sideload")
+    Write-Step (T "Step5Sideload")
     Write-Host ""; Write-Host "  $(T 'OnDeviceApply')" -ForegroundColor Green
     Write-Host ""
     if (-not $RomZip) {
@@ -774,6 +763,19 @@ function Start-FlashProcess {
         return $false
     }
     Write-OK (T "RomSideloadComplete")
+
+    Write-Host ""
+
+    Write-Step (T "Step6FactoryReset")
+    Write-Host ""; Write-Host "  $(T 'OnDeviceFactoryReset')" -ForegroundColor Yellow; Write-Host ""
+    Write-Host "  1. $(T 'RebootRecoveryAgain')" -ForegroundColor Cyan
+    Write-Host "  2. $(T 'SelectFactoryReset')" -ForegroundColor Cyan
+    Write-Host "  3. $(T 'SelectFormatData')" -ForegroundColor Cyan
+    Write-Host "  4. $(T 'WaitFormatComplete')" -ForegroundColor Cyan
+    Write-Host ""
+    do {
+        $factoryResetConfirm = (Read-Host (T "FactoryResetDone")).Trim()
+    } while ($factoryResetConfirm -ne 'y' -and $factoryResetConfirm -ne 'Y')
     
     if ($GappsZip -and (Test-Path $GappsZip)) {
         Write-Step (T "Step7Gapps")
@@ -788,7 +790,7 @@ function Start-FlashProcess {
         Write-Host ""
         if (-not (Get-YesNo (T "ReadyToFlashGApps"))) {
             Write-Host ""
-            Write-Host "  $(T 'AfterRomSideload')" -ForegroundColor Yellow
+            Write-Host "  $(T 'GappsAfterFactoryReset')" -ForegroundColor Yellow
             Write-Host "  $(T 'GappsInstruction')" -ForegroundColor Yellow
         } else {
             Write-Host "  $(T 'WaitSideloadMode')" -ForegroundColor Yellow
@@ -809,18 +811,18 @@ function Start-FlashProcess {
                     Write-OK (T "GAppsSideloadComplete")
                 } else {
                     Write-Err (T "GAppsSideloadFailed")
-                    Write-Host "  $(T 'AfterRomSideload')" -ForegroundColor Yellow
+                    Write-Host "  $(T 'GappsAfterFactoryReset')" -ForegroundColor Yellow
                     Write-Host "  $(T 'GappsInstruction')" -ForegroundColor Yellow
                 }
             } else {
                 Write-Warn (T "NotInSideload")
-                Write-Host "  $(T 'AfterRomSideload')" -ForegroundColor Yellow
+                Write-Host "  $(T 'GappsAfterFactoryReset')" -ForegroundColor Yellow
                 Write-Host "  $(T 'GappsInstruction')" -ForegroundColor Yellow
             }
         }
     } else {
         Write-Host ""
-        Write-Host "  $(T 'AfterRomSideload')" -ForegroundColor Yellow
+        Write-Host "  $(T 'GappsAfterFactoryReset')" -ForegroundColor Yellow
         Write-Host "  $(T 'GappsInstruction')" -ForegroundColor Yellow
     }
     

@@ -42,10 +42,10 @@ AOSPFlasher/
 1. Step 1: 重启到 Fastboot 模式 / Reboot to Fastboot mode
 2. Step 2: 刷写分区镜像 (boot, init_boot, dtbo, vendor_boot) / Flash partition images (boot, init_boot, dtbo, vendor_boot)
 3. Step 3: 刷写 recovery / Flash recovery
-4. Step 4: 重启到 Recovery 并 sideload 刷入 ROM ZIP / Reboot to Recovery and sideload the ROM ZIP
-5. Step 5: ROM 刷入后重启到 Recovery 执行双清 (Factory Reset) / Reboot to Recovery and perform factory reset after ROM flashing
-6. Step 6: 如有需要，在重启系统前 sideload 刷入 GApps / If needed, sideload GApps before rebooting to system
-7. Step 7: 完成后重启系统 / Reboot to system when finished
+4. Step 4: 重启到 Recovery / Reboot to Recovery
+5. Step 5: sideload 刷入 ROM ZIP / Sideload the ROM ZIP
+6. Step 6: ROM 刷入后重启到 Recovery 执行双清 (Factory Reset) / Reboot to Recovery and perform factory reset after ROM flashing
+7. Step 7: 如有需要，在重启系统前 sideload 刷入 GApps，然后重启系统 / If needed, sideload GApps before rebooting to system, then reboot system
 
 ## 驱动安装 / Driver Installation
 
